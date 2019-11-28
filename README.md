@@ -1,7 +1,7 @@
-# PROJECT NAME 
+# Angular SPA for EA Development Portal
 
 ## Description
-*A good description is clear, short, and to the point. Describe the importance of your project, and what it does.*
+*Single page application for EA Development Portal. Leverages Angualr 8 and AWS Amplify.*
 
 ## Contents of this file
 
