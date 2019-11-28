@@ -10,13 +10,16 @@ export class ApiComponent implements OnInit {
   apis: any[];
   showSpinner = true;
 
-  constructor(private apiGatewayService: ApiGatewayService) { }
+  constructor(private apiGatewayService: ApiGatewayService) {}
 
   ngOnInit() {
+    this.getAllApis();
+  }
+
+  getAllApis() {
     this.apiGatewayService.getAllApis().subscribe(apis => {
       this.apis = apis;
       this.showSpinner = false;
     });
   }
-
 }

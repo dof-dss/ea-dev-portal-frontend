@@ -1,8 +1,5 @@
-import { Component, OnInit , ChangeDetectorRef} from '@angular/core';
-
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { environment } from '@env';
-import { Observable } from 'rxjs';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { AuthService } from '@app/service/auth.service';
 import { Router } from '@angular/router';
 
@@ -23,9 +20,6 @@ export class NavComponent implements OnInit {
   ngOnInit() {
     this.authService.isLoggedIn$.subscribe(
       isLoggedIn => {
-        if (this.isLoggingIn(isLoggedIn)) {
-          this.router.navigate([this.authService.redirectUrl]);
-        }
         this.isLoggedIn = isLoggedIn;
         this.changeDetectorRef.detectChanges();
         console.log('Logged in = ' + this.isLoggedIn);
