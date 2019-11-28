@@ -1,5 +1,8 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, NgZone} from '@angular/core';
+
 import { environment } from '@env';
+import { Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { AuthService } from '@app/service/auth.service';
 import { Router } from '@angular/router';
 
@@ -14,12 +17,16 @@ export class NavComponent implements OnInit {
   isNavbarCollapsed = true;
   user: { id: string; username: string; email: string };
 
-  constructor(private authService: AuthService, private router: Router, private changeDetectorRef: ChangeDetectorRef) {
+  constructor(private authService: AuthService, private router: Router, 
+    private changeDetectorRef: ChangeDetectorRef, private ngZone: NgZone) {
   }
 
   ngOnInit() {
     this.authService.isLoggedIn$.subscribe(
       isLoggedIn => {
+        if (this.isLoggingIn(isLoggedIn)) {
+          this.ngZone.run(() => this.router.navigateByUrl(this.authService.redirectUrl));
+        }
         this.isLoggedIn = isLoggedIn;
         this.changeDetectorRef.detectChanges();
         console.log('Logged in = ' + this.isLoggedIn);
