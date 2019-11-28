@@ -1,0 +1,17 @@
+<ngb-tabset>
+    <ngb-tab title="Overview">
+        <ng-template ngbTabContent>
+            <app-documentation [apiId]='id'></app-documentation>
+        </ng-template>
+    </ngb-tab>
+    <ngb-tab title='Explorer'>
+        <ng-template ngbTabContent>
+            <app-swagger [apiId]='id'></app-swagger>
+        </ng-template>
+    </ngb-tab>
+    <ngb-tab title="SDK">
+        <ng-template ngbTabContent>
+            <app-sdk [apiId]='id'></app-sdk>
+        </ng-template>
+    </ngb-tab>
+</ngb-tabset>

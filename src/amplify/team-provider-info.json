@@ -1,0 +1,21 @@
+{
+    "beta": {
+        "awscloudformation": {
+            "AuthRoleName": "eadevportalfrontend-beta-20191118163749-authRole",
+            "UnauthRoleArn": "arn:aws:iam::111094818217:role/eadevportalfrontend-beta-20191118163749-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::111094818217:role/eadevportalfrontend-beta-20191118163749-authRole",
+            "Region": "eu-west-2",
+            "DeploymentBucketName": "eadevportalfrontend-beta-20191118163749-deployment",
+            "UnauthRoleName": "eadevportalfrontend-beta-20191118163749-unauthRole",
+            "StackName": "eadevportalfrontend-beta-20191118163749",
+            "StackId": "arn:aws:cloudformation:eu-west-2:111094818217:stack/eadevportalfrontend-beta-20191118163749/c2323410-0a21-11ea-ae8c-02ea235e602c"
+        },
+        "categories": {
+            "auth": {
+                "EADevPortal": {
+                    "hostedUIProviderCreds": "[{\"ProviderName\":\"Google\",\"client_id\":\"817152446221-22460v6g7am444q63nd0uie97rq4ahsj.apps.googleusercontent.com\",\"client_secret\":\"W2h_rQknIR1t6hd7KGsakLiZ\"}]"
+                }
+            }
+        }
+    }
+}

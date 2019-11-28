@@ -1,0 +1,26 @@
+<div class="d-flex justify-content-center" *ngIf='showSpinner'>
+    <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+
+<div class="row mt-2">
+    <div class="col-sm-4 mt-2" *ngFor="let api of apis">
+        <div class="card">
+            <div class="card-header">
+                {{ api.id }}
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ api.name }}</h5>
+                <p class="card-text" *ngIf="api.description == null">
+                    No documentation has been added to this API
+                </p>
+                <p class="card-text" *ngIf="api.description != null">
+                    {{ api.description }}
+                </p>
+                <a href="#" routerLink="./detail/{{ api.id }}" routerLinkActive="active"
+                    class="btn btn-primary">Details...</a>
+            </div>
+        </div>
+    </div>
+</div>
