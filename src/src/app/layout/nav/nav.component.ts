@@ -1,8 +1,5 @@
 import { Component, OnInit, ChangeDetectorRef, NgZone} from '@angular/core';
-
 import { environment } from '@env';
-import { Observable } from 'rxjs';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { AuthService } from '@app/service/auth.service';
 import { Router } from '@angular/router';
 
