@@ -53,4 +53,10 @@ export class ApiGatewayService {
       }
     }));
   }
+
+  getApiKeys() {
+    return from(API.get(environment.portalApiName, '/apikeys', {
+      queryStringParameters: { identityId: this.auth.id }
+    }));
+  }
 }

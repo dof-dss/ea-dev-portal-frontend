@@ -11,10 +11,10 @@ export class SidebarComponent implements OnInit {
   navItems = [
     { link: '/home', title: 'Home', icon: faHome },
     { link: '/api', title: 'API Reference',  icon: faLayerGroup },
-    { link: '/', title: 'Guides',  icon: faBookOpen },
-    { link: '/', title: 'Open Source',  icon: faLockOpen },
-    { link: '/', title: 'Usage',  icon: faChartBar },
-    { link: '/', title: 'API Keys',  icon: faKey }
+    { link: '/guides', title: 'Guides',  icon: faBookOpen },
+    { link: '/openSource', title: 'Open Source',  icon: faLockOpen },
+    { link: '/usage', title: 'Usage',  icon: faChartBar },
+    { link: '/apiKeys', title: 'API Keys',  icon: faKey }
   ];
 
   constructor() { }
