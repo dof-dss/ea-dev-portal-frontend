@@ -8,6 +8,7 @@ import { ApiKeysComponent } from './modules/api-keys/api-keys.component';
 import { UsageComponent } from './modules/usage/usage.component';
 import { OpenSourceComponent } from './modules/open-source/open-source.component';
 import { GuidesComponent } from './modules/guides/guides.component';
+import { UsagePlansComponent } from './modules/usage-plans/usage-plans.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   },
   { path: 'apiKeys', canActivate: [AuthGuard], component: ApiKeysComponent },
   { path: 'usage', canActivate: [AuthGuard], component: UsageComponent },
+  { path: 'usagePlans', canActivate: [AuthGuard], component: UsagePlansComponent },
   { path: 'openSource', canActivate: [NoAuthGuard], component: OpenSourceComponent },
   { path: 'guides', canActivate: [NoAuthGuard], component: GuidesComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },

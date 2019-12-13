@@ -15,8 +15,12 @@ export class ApiKeysComponent implements OnInit {
   ngOnInit() {
     this.apiGatewayService.getApiKeys().subscribe(result => {
       this.apiKeys = result;
-      this.showSpinner = false;
-    });
+      if (result.length > 0) {
+      this.apiGatewayService.apiKey = result[0].value;
+      }
+    },
+    err => console.error(err),
+    () => this.showSpinner = false);
   }
 
 }

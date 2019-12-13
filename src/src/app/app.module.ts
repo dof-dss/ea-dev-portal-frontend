@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
+import { ChartsModule } from 'ng2-charts';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,6 +27,7 @@ import { ApiKeysComponent } from './modules/api-keys/api-keys.component';
 import { UsageComponent } from './modules/usage/usage.component';
 import { OpenSourceComponent } from './modules/open-source/open-source.component';
 import { GuidesComponent } from './modules/guides/guides.component';
+import { UsagePlansComponent } from './modules/usage-plans/usage-plans.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import { GuidesComponent } from './modules/guides/guides.component';
     ApiKeysComponent,
     UsageComponent,
     OpenSourceComponent,
-    GuidesComponent
+    GuidesComponent,
+    UsagePlansComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,8 @@ import { GuidesComponent } from './modules/guides/guides.component';
     AmplifyAngularModule,
     NgbModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule
   ],
   providers: [AmplifyService, AuthService, ApiGatewayService, AuthGuard, NoAuthGuard, GitHubService],
   bootstrap: [AppComponent]

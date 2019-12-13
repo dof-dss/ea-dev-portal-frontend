@@ -60,7 +60,9 @@ export class AuthService {
   }
 
   public logOut() {
-    Auth.signOut();
+    Auth.signOut().then(() => {
+      localStorage.clear();
+    });
   }
 
   get redirectUrl(): string {
