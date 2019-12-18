@@ -73,6 +73,20 @@ export class AuthService {
     localStorage.setItem('redirectUrl', value);
   }
 
+  isAdmin(): Promise<boolean> {
+    return Auth.currentSession()
+      .then(session => {
+        const groups = session.getIdToken().payload['cognito:groups'];
+        if (groups !== undefined && groups.some(x => x === 'Admin')) {
+          return true;
+        }
+        return false;
+      })
+      .catch(err => {
+        return false;
+      });
+  }
+
   private updateUserSession(user: any) {
     user.getSession((err, session) => {
       if (err) {

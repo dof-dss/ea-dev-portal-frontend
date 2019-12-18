@@ -28,6 +28,7 @@ import { UsageComponent } from './modules/usage/usage.component';
 import { OpenSourceComponent } from './modules/open-source/open-source.component';
 import { GuidesComponent } from './modules/guides/guides.component';
 import { UsagePlansComponent } from './modules/usage-plans/usage-plans.component';
+import { AdminComponent } from './modules/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { UsagePlansComponent } from './modules/usage-plans/usage-plans.component
     UsageComponent,
     OpenSourceComponent,
     GuidesComponent,
-    UsagePlansComponent
+    UsagePlansComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
