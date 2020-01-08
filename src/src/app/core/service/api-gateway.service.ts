@@ -15,13 +15,11 @@ export interface IDocumentModel {
 })
 export class ApiGatewayService {
   auth: AuthState;
+  
+  apis$ = from(API.get(environment.portalApiName, '/apis', {}));
 
   constructor(private authService: AuthService) {
     this.authService.auth$.subscribe(auth => (this.auth = auth));
-  }
-
-  getAllApis() {
-    return from(API.get(environment.portalApiName, '/apis', {}));
   }
 
   getUsagePlans() {

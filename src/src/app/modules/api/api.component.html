@@ -1,10 +1,10 @@
-<div class="d-flex justify-content-center" *ngIf='showSpinner'>
+<div class="d-flex justify-content-center" *ngIf="showSpinner">
     <div class="spinner-border" role="status">
         <span class="sr-only">Loading...</span>
     </div>
 </div>
 
-<div class="row mt-2">
+<div class="row mt-2" *ngIf="apis$ | async as apis">
     <div class="col-sm-4 mt-2" *ngFor="let api of apis">
         <div class="card">
             <div class="card-header">

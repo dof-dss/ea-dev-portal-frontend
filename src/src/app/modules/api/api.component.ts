@@ -1,25 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiGatewayService } from '../../core/service/api-gateway.service';
+import { Observable } from 'rxjs';
+import { finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-api',
   templateUrl: './api.component.html',
   styleUrls: ['./api.component.scss']
 })
-export class ApiComponent implements OnInit {
-  apis: any[];
+export class ApiComponent {
   showSpinner = true;
+  apis$ = this.apiGatewayService.apis$.pipe(finalize(() => (this.showSpinner = false)));
 
   constructor(private apiGatewayService: ApiGatewayService) {}
-
-  ngOnInit() {
-    this.getAllApis();
-  }
-
-  getAllApis() {
-    this.apiGatewayService.getAllApis().subscribe(apis => {
-      this.apis = apis;
-      this.showSpinner = false;
-    });
-  }
 }

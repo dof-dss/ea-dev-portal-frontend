@@ -1,12 +1,8 @@
-<div class="row">
-        <div class="col-xl-12 text-xs-center">
-            {{ documentModel?.description }}
-        </div>
-    </div>
-    
-    <div class="row">
-        <div class="col-xl-12 text-xs-center">
-            {{ documentModel?.overview }}
-        </div>
-    </div>
-    
+<span *ngIf="documentModel$ | async as documentModel">
+    <h2>
+        {{ documentModel?.description }}
+    </h2>
+    <p>
+        {{ documentModel?.overview }}
+    </p>
+</span>

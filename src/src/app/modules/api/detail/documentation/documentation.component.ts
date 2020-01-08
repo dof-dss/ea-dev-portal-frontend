@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ApiGatewayService, IDocumentModel } from '../../../../core/service/api-gateway.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-documentation',
@@ -8,14 +9,12 @@ import { ApiGatewayService, IDocumentModel } from '../../../../core/service/api-
 })
 export class DocumentationComponent implements OnInit {
   @Input() apiId: string;
-  documentModel: any;
+  documentModel$: Observable<IDocumentModel>;
 
   constructor(private apiGatewayService: ApiGatewayService) { }
 
   ngOnInit() {
-    this.apiGatewayService.getDocumentation(this.apiId, 'beta').subscribe(result => {
-      this.documentModel = result as IDocumentModel;
-    });
+    this.documentModel$ = this.apiGatewayService.getDocumentation(this.apiId, 'beta');
   }
 
 }

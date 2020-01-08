@@ -15,9 +15,8 @@ export class SdkComponent implements OnInit {
   ngOnInit() { }
 
   getSdk() {
-    const that = this;
     this.apiGatewayService.getSdk(this.apiId, 'beta', 'javascript').subscribe(result => {
-      that.downloadFile('data:' + result.contentType + ';base64,' + result.body, `${that.apiId}_beta-javascript.zip`);
+      this.downloadFile('data:' + result.contentType + ';base64,' + result.body, `${this.apiId}_beta-javascript.zip`);
     });
   }
 
